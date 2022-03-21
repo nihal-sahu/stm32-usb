@@ -1,17 +1,34 @@
-12:05:34 **** Incremental Build of configuration Debug for project usb_device ****
+12:14:07 **** Incremental Build of configuration Debug for project usb_device ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/systeminit.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DSTM32F429xx -c -I../Inc -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Device/ST/STM32F4xx/Include -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systeminit.d" -MT"Src/systeminit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/systeminit.o"
-arm-none-eabi-gcc -o "usb_device.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/nihal/Desktop/Projects/stm32-usb/usb_device/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_device.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: usb_device.elf
- 
-arm-none-eabi-size   usb_device.elf 
-arm-none-eabi-objdump -h -S  usb_device.elf  > "usb_device.list"
-   text	   data	    bss	    dec	    hex	filename
-   5804	    112	   1584	   7500	   1d4c	usb_device.elf
-Finished building: default.size.stdout
- 
-Finished building: usb_device.list
- 
+arm-none-eabi-gcc "../Src/usbd_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DSTM32F429xx -c -I../Inc -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Device/ST/STM32F4xx/Include -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usbd_driver.d" -MT"Src/usbd_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usbd_driver.o"
+arm-none-eabi-gcc "../Src/usbd_framework.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DSTM32F429xx -c -I../Inc -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Device/ST/STM32F4xx/Include -I/home/nihal/Desktop/Projects/stm32-usb/usb_device/Inc/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usbd_framework.d" -MT"Src/usbd_framework.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usbd_framework.o"
+In file included from ../Inc/usbd_framework.h:4,
+                 from ../Src/usbd_framework.c:2:
+../Inc/usbd_driver.h:48:62: warning: 'enum UsbEndpointType' declared inside parameter list will not be visible outside of this definition or declaration
+   48 |  void (*configure_in_endpoint)(uint8_t endpoint_number, enum UsbEndpointType endpoint_type, uint16_t endpoint_size);
+      |                                                              ^~~~~~~~~~~~~~~
+../Inc/usbd_driver.h:56:8: error: unknown type name 'UsbEvents'
+   56 | extern UsbEvents usb_events;
+      |        ^~~~~~~~~
+In file included from ../Src/usbd_driver.c:1:
+../Inc/usbd_driver.h:48:62: warning: 'enum UsbEndpointType' declared inside parameter list will not be visible outside of this definition or declaration
+   48 |  void (*configure_in_endpoint)(uint8_t endpoint_number, enum UsbEndpointType endpoint_type, uint16_t endpoint_size);
+      |                                                              ^~~~~~~~~~~~~~~
+../Inc/usbd_driver.h:56:8: error: unknown type name 'UsbEvents'
+   56 | extern UsbEvents usb_events;
+      |        ^~~~~~~~~
+../Src/usbd_framework.c:4:10: fatal error: usb_device.h: No such file or directory
+    4 | #include "usb_device.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+../Src/usbd_driver.c:2:10: fatal error: usb_standards.h: No such file or directory
+    2 | #include "usb_standards.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:28: Src/usbd_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:28: Src/usbd_framework.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
 
-12:05:35 Build Finished. 0 errors, 0 warnings. (took 1s.39ms)
+12:14:07 Build Failed. 7 errors, 2 warnings. (took 726ms)
 

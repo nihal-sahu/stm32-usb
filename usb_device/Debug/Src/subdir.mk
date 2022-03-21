@@ -6,15 +6,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Src/main.c \
-../Src/systeminit.c 
+../Src/systeminit.c \
+../Src/usbd_driver.c \
+../Src/usbd_framework.c 
 
 OBJS += \
 ./Src/main.o \
-./Src/systeminit.o 
+./Src/systeminit.o \
+./Src/usbd_driver.o \
+./Src/usbd_framework.o 
 
 C_DEPS += \
 ./Src/main.d \
-./Src/systeminit.d 
+./Src/systeminit.d \
+./Src/usbd_driver.d \
+./Src/usbd_framework.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +30,7 @@ Src/%.o Src/%.su: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/main.d ./Src/main.o ./Src/main.su ./Src/systeminit.d ./Src/systeminit.o ./Src/systeminit.su
+	-$(RM) ./Src/main.d ./Src/main.o ./Src/main.su ./Src/systeminit.d ./Src/systeminit.o ./Src/systeminit.su ./Src/usbd_driver.d ./Src/usbd_driver.o ./Src/usbd_driver.su ./Src/usbd_framework.d ./Src/usbd_framework.o ./Src/usbd_framework.su
 
 .PHONY: clean-Src
 
