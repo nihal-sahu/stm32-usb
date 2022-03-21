@@ -1,0 +1,2 @@
+../Src/systeminit.c:9:13:configure_clock	4	static
+../Src/systeminit.c:54:6:SystemInit	8	static

@@ -4,9 +4,6 @@
 
 int main(void)
 {
-    log_info("Program entrypoint.");
-
+    /* Loop forever */
 	for(;;);
 }
-
-
