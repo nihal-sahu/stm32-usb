@@ -10,9 +10,9 @@
 #define USB_DESCRIPTOR_TYPE_HID_REPORT 0x22
 #define USB_HID_COUNTRY_NONE 0
 
-/** \brief USB HID descriptor. */
+
 typedef struct {
-	uint8_t bLength; /**<\brief Size of the descriptor (bytes). */
+	uint8_t bLength; 
 	uint8_t bDescriptorType; /**<\brief Type of the descriptor. */
 	uint16_t bcdHID; /**<\brief BCD encoded version that the HID descriptor and device complies to. */
 	uint8_t bCountryCode; /**<\brief Country code of the localized device. */
@@ -21,4 +21,4 @@ typedef struct {
 	uint16_t wDescriptorLength0; /**<\brief First HID report descriptor length (bytes). */
 } __attribute__((__packed__)) UsbHidDescriptor;
 
-#endif /* HID_USB_HID_STANDARDS_H_ */
+#endif
