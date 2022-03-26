@@ -1,4 +1,5 @@
 
+//open source
 #ifndef HID_USB_HID_STANDARDS_H_
 #define HID_USB_HID_STANDARDS_H_
 
