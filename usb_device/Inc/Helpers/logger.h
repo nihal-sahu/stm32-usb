@@ -7,7 +7,7 @@ typedef enum
     LOG_LEVEL_DEBUG
 } LogLevel;
 
-/// The global variable `system_log_level` should be defined and given the desired log level.
+
 extern LogLevel system_log_level;
 
 void log_error(char const * const format, ...);
